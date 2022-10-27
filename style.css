@@ -1,0 +1,16 @@
+#heading{
+    color:white;
+    background-color:lightgreen;
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.5em;
+}
+body{
+    background-color: whitesmoke;
+}
+p{
+    font-family:'Lora', sans-serif;
+}
+.specialheading{
+    font-family: 'Libre Baskerville', serif;
+    color:blueviolet
+}
