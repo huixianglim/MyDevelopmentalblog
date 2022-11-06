@@ -14,3 +14,41 @@ p{
     font-family: 'Libre Baskerville', serif;
     color:blueviolet
 }
+.officialheading{
+    font-family: 'Libre Baskerville', serif;
+    color: #1c92d2;  /* fallback for old browsers */
+color: -webkit-linear-gradient(to right, #f2fcfe, #1c92d2);  /* Chrome 10-25, Safari 5.1-6 */
+color: linear-gradient(to right, #f2fcfe, #1c92d2); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+     
+
+}
+div.flexboxes{
+    display: flex;
+    background-color: rgb(12, 225, 222);
+    width: 200px;
+}
+.flexboxes> div{
+    padding:10px;
+    margin:20px;
+    font-size: 30px;
+    background-color: rgb(233, 55, 55);
+    color: white;
+}
+
+.break{
+    background-color: lightgreen;
+    text-align: center;
+    color: black;
+    font-size: 20px;
+    display: block;
+    font-family:'Lora', sans-serif;
+}
+
+
+.img{
+    max-width: 100%;
+    width:100px;
+    height:100px;
+    background-size:cover;
+    background-image: url(https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2043&q=80);
+}
