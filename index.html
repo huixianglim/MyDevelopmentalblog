@@ -135,9 +135,235 @@
             Next there is also the element.classname which allows you to access the class name of the specific element. There is also the 
             element.innerHTML and element.textContent. Both are similiar and the difference is that innerHTML makes it so that the browser treat it as a html while textcontent does not
         </p>
+        <span class='break'>Moving to next week</span>
+        <h1 class = 'officialheading'> Week 7 blog update</h1>
+        <h1 class="specialheading">DOM</h1>
+        <p>In this week, I have learnt more on the DOM Structure. Like I have said previously, it is similiar to a hierachy of elements within the html document itself.
+            To access each of these elements, you must first use the document key word. E.G.: document.getElementsByTagName();. So now that is out of the way, I would like to talk more on the new things that I have learnt.
+            Tbh theres nothing much new except the fact that you can use the previousSibling or nextSibling methods and also the firstChild and lastChild method which I think is pretty self explanatory where the firstChild method you select the first chid of a parent element and likewise for last and same with nextSibling method which is just like the name implies, it allows you to 
+            select the previous or next sibling from the DOM tree. Moving on, lets now look at the Event handling and Validation topic.
+        </p>
+        <h1 class="specialheading">Event handling and validation</h1>
+        <p>This topic is actually quite interesting and useful. So starting off you are able to pretty much in my own words capture the events that happens to certain specified element(/s) and manipulate it any way you would want it to.
+            Heres how you do it :(element.addEventListener('event', functionName, [Boolean]);)
+            For an event there is also an event object where it tells information about the event, and the element it happened upon
+            Next, there is also the event bubbling which is pretty much what the boolean is needed for in the addEventListener. To put it simply, (an example from the notes btw)
+            A click on the inner p element first runs onclick.
+            <ol>
+            <li> On that p.</li>
+            <li>Then on the outer div.</li>
+            <li> Then on the outer form. </li>
+            <li> And so on upwards till the document object</li> 
+            </ol>
+            Next, theres 2 interesting functions in which I would like to talk about.
+            Firstly, the event.preventDefault(). This function is used when you want to prevent the default behavior of an element (e.g to keep the user on the same page
+            to perform validation).
+            Secondly, the event.stopPropagation(). This function is used when you want to stop the event from bubbling up.
+            Nextly, I would like to talk more about some events that could be manipulated/captured when creating a website. Heres a list of the UI events
+            which are events that occur when a user interacts with the browser's user interface (UI) rather than the webpage.
+            List goes as shows: <ol><li>load (Web page has finished loading)</li>
+            <li>unload (Web page is unloading (usually because a new page was requested))</li>
+            <li>error (Browser encounters a JavaScript error or an asset doesn't exist)</li>
+            <li>resize (Browser window has been resized)</li>
+            <li>scroll (User has scrolled up or down the page)</li></ol>
+            Of course there are more events like onclick or onchange and stuffs like that but I am not going to write all of it down.
+            Next, moving onto forms and validation.
 
+
+        </p>
+        <h1 class="specialheading">Forms and Validation</h1>
+        <p>Starting off, normally for most websites with login features or other features, you need to validate certain aspects of an input like
+            creation of account name,password and etc. For most validations, we would want to make sure that we validate it on a client side first so that
+            we can save time that would be wasted on doing validation at the server itself. Here is how you can validate forms 
+            <ul>
+            <li>Add event handler to the keyUp event</li>   
+            <li>Add event handler to the blur event</li>
+            <li>Add event handler to the submit... many more..</li></ul>
+            
+        </p>
+        <p>Next, moving on to forms or the new things I have learnt about it. Firstly, there is a cool new feature where you can make radio buttons/checkboxes or other inputs
+            'disabled'(where users cannot select them). You can also create a drop down menu. You do so by enveloping a bunch of options with values within a 'select'.
+            Like with most other elements, you can assign ids to forms or inputs to be able to retrieve them later in javascript.
+            
+        </p>
+        <h1 class="specialheading">Local Storage</h1>
+        <p>Most browser store up to 5MB of data per domain in a storage object and if a site requires more than 5MB of data, the broswer will typically ask the user for permission to store data(never rely on users agreeing to give a site more
+            space). “QUOTA_EXCEEDED_ERR” is the exception that will get
+            thrown if you exceed your storage quota of 5 megabytes. You do try and catch if you wana do something when the website reaches this error. E.g.</p>
+            <p>try {</p>
+                <p> localStorage.setItem(data.name,JSON.stringify(data));</p>
+                    <p> } catch(domException) {</p>
+                        <p>  if (domException.name === 'QuotaExceededError' ||</p>
+                            <p>  domException.name === 'NS_ERROR_DOM_QUOTA_REACHED')</p>
+                                <p>  {</p>
+                                    <p> // Fallback code comes here.</p>
+                                        <p>  }</p>
+                                            <p>  }</p>
+                
+           <p> Local storages are based on key/values pairs(Something like dictionaries in python and C#).
+            There are 2 main types of local storages, Local and session. They both have the same methods to get and set data, but each lasts a
+            different amount of time. For security, browsers employ a
+            same origin policy, which means that
+            data can only be accessed by other pages
+            in the same origin. Some examples would include that, Protocol, Subdomain, Domain, Port must match.
+            So how do you start with local storage, you start with this: localStorage.setItem(key, value) or
+            sessionStorage.setItem(key, value) and to get the items, you do this: localStorage.getItem(key) or
+            sessionStorage.getItem(key).Another thing to note is that you can treat the storage as an array meaning, you can 
+            get an item like this localStorage["name of key"].
+        </p>
+        <p>Now lets move onto JSON. JSON is somewhat similiar to an object(like the format)
+            but it just contains data. This is how it looks like {
+                "name": "Pikachu",
+                "hp": 200,
+                "attack": 999,
+                "defense": 999,
+                "type": "electric"
+                }. Similiarly, it is made up of keys and values pairs.The values can be a string,
+                number, Boolean, array, object or
+                null. So in order to utilise json well, javascript has 2 important methods on how to manipulate json to help you out.</p>
+                <ul>
+                    <li>
+                        Convert a JavaScript object to a string:
+                        -JSON.stringify();
+                    </li>
+                    <li>
+                        Convert a string to a JavaScript object:
+                        -JSON.parse();
+                    </li>
+                </ul>
+            
+                <p>Heres an example on how to utilise json.
+                <p>function Pokemon(name, hp, attack, defense, color, type) {</p>
+                    <p>  this.name = name;</p>
+                        <p> this.hp = hp;</p>
+                            <p>  this.attack = attack;</p>
+                                <p>  this.defense = defense;</p>
+                                    <p>  this.color = color;</p>
+                                        <p>  this.type = type;</p>
+                                            <p>  }</p>
+                                                <p> //let's create our base and store pikachu</p>
+                                                    <p>  let pikachu = new Pokemon("Pikachu", 100, 9, 8, "yellow", "electric");</p>
+                                                        <p>  //</p>
+                                                            <p>  let giantPokeBall = [];</p>
+                                                                <p> giantPokeBall.push(pikachu);</p>
+                    <p> localStorage.setItem("pokemonList", JSON.stringify(giantPokeBall));</p>
+
+                   <p> Next, moving onto how to clear storages, you can do the localStorage.clear() function or localStorage.removeItem(item key) function.
+                </p>
+                <p>In conclusion, in this week, I have learnt how to manipulate DOM events, handle forms and store data on local storages</p>
+    <span class='break'>Moving to next week</span>
+    <h1 class="officialheading">Week 8 blog updates</h1>
+    <h1 class="specialheading">JQuery</h1>
+    <p>Starting off, in this week, I have learnt how to utilise jquery which is like javascript but a short cut version(shorter length i mean).
+        For example, $('li.hot') = li element with the class 'hot'. Now that you have selected an element or elements, you can now apply many functions to them or manipulate them how ever you would want them to be </p>
+        <p>like. For example, $('div').css({</p>
+            <p>'background-color' : 'green',</p>
+                <p>'color' : 'white'</p>
+                    <p> })(setting all div elements to have background color of green and normal color of white).</p>
+        <p>Also do note that 
+        if a selector returns more than 1 element,
+        the modification will affect all of them.
+    </p>
+    <p>Now in jquery, you can also choose to either manipulate the html or text content(I think the name is pretty self explanatory so imma not explaiin it further).</p>
+    <p>E.g. :$('li').html('(b)Updated(b)')(imagine the brackets are > arrows)</p>
+    <p> You can also set attributes to elements by doing this: $('a').attr('href', 'newvalue') -- set the value of
+        the href attribute. Another example: $(".highlight").attr("class",
+        "special") </p>
+        <p>Do take note: you can also add classes, remove classes or attributes using the functions: .addClass(), .removeClass() ,.removeAttr() respecitively(list is not exhausted).</p>
+    <p>
+        Moving on, in order to make things simplier, you can use the certain functions in order to help you select specific elements better. Some of this functions include(not all)
+        prev(),next(),parent() and children(). Do note that you can stack each of these on one another. You can also use Remove() function to remove specific elements from the DOM.
+        Next, there is also a clone() method which is pretty self explanatory but do note that the cloning stacks, meaning that you cannot spam it or it will crash your webpage.
+    </p>
+    <p>Moving on, you can also store variables within a html5 element by using data attributes. E.g. : < a href="google.com" data-tooltip="Go to google" >Google.com< /a ></p>
+    <p>Oh yah one more thing, you can also use the hasClass() function to check if a HTML element has the specified class.</p>  
+    <p>Now moving onto creating of elements. I think I have wrote this down in around week 5 but imma still recap it as it has been quite a while. Here is how you do so: 
+        var n = $("< p >Hello World< /p >");
+        $("body").append(n).
+        Oh yah, other than appending, you can also se the functions: prepend(), after() and before(). Appending adds it to the specified element, e.g. appending to li adds the specified thing within < li > but after the already existing elements. after() adds the element after the specified element, not within.
+    </p>  
+    <p>Moving on, there is also Live NodeList and Static NodeList which are applied to examples such as getElementById() and querySelector() respectively.
+        So basically the difference is that in the static NodeList, they reflect the document
+        when the query was made. If the script changes the
+        content of the page, the NodeList is not updated to
+        reflect those changes. While the in the Live NodeList, when your script updates the page, the
+        NodeList is updated at the same time(Quite self-explanatory imo just think about livestreams and normal videos).  
+    </p>
+    <p>
+        Within jquery, theres also a few notable functions in jquery that I find pretty interesting. For example, .slideUp() and .animate() as they are both animation related functions.
+
+    </p>
+    <p>In short summary, jquery is pretty much a shortform version of javascript as it can really cut down the amount of lines of codes needed</p>
+    <p>Now lets move onto another topic which I have learnt Api.</p>
+    <h1 class="specialheading">
+        API
+    </h1>
+    <p>
+        Starting off I would like to talk about something called AJAX. AJAX stands for  Asynchronous Javascript and XML. 
+        So essentially, it is a technique that allows a webpage to have its contents to be updated without having the whole page being updated. Its most popular uses of it includes things like the 
+        google live searches. What i mean is that with AJAX, websites can send and request data from a server in the background without disturbing the entire page and updating a specific element of a page.
+    </p>
+    <p>How AJAX WORKS</p>
+    <ol><li> Create an XMLHTTP
+        Request</li>
+        <li> Create a callback function</li>
+            <li> Open a request</li>
+                <li>Send the request</li></ol>
+    <p>A XML is something like to HTML but tag name are different</p>
+    <p>It has both benefits and downsides. For example, Flexible data form and can represent
+        complex data structures and Considered as verbose language due to
+        the tags adding lots of extra character.</p>
+    <p>So now lets look at how to create requests with javascript. To be honest, im not very sure about what it is yet but I do know that
+        from the notes, there are 3 ways on how to make the requests and those are: XMLHTTP Request, Fetch API and lastly 3rd Party Libraries(jQuery).
+    </p>
+  
+    <p>Now lets move onto API. From what I understand, API stands for Application Programming Interface and it can be thought of like a waiter 
+        that sends requests and deliver the answers to you. It starts off taking your requests(or orders in this scenario) and brings it to the kitchen and takes 
+        the response (the item menu that you ordered) and bring it back to you. Something like a messenger. 
+        Upon further reading, Iv learnt that the response that you get from api can be like a json string data (Maybe not 100% of the time not very sure) and hence you need to parse it and convert it into javascript objects,
+        something like the local storages thing that I talked abt previously in week 7, before you can start using it. 
+    </p>
+    <p>In addition to api, I have also learnt how to create a fetch. I think this is the general format of which I have learnt from in the 
+        polite mall. fetch(url, {
+            method: 'POST',
+            body: JSON.stringify({
+            name: 'red',
+            login: 'redmonster',
+            })
+            })
+            .then(function (data) {
+            //return data.json();
+            //do something
+            })
+            .then(function (data) {
+            //process the return earlier
+            }).
+            .catch(function (error){
+            //handle error
+            }). Another thing to note is that fetch is just an HTTP response and if we want to extract the JSON body content from the response, we use the json() method.
+    </p>
+    <p>Also another no brainer thing to note, you can also add ajax with api i mean makes sense right you use api to get data and ajax to like update your page accordingly</p>
+    <p>though sadly to say im still not 100% sure on how to do it. I will get back to this topic upon further reading.</p>
+    <p>Ok now onto recaps so basically what I have learnt in this week is jquery and api. Jquery is what i would call shortform or shortened javascript and api is like a waiter for data and ajax is something that is used for concurrent updating of data in a website.
+        Now lets look forward to week 9 updates.
+    </p>
+    <span class='break'>Moving to next week</span>
+    <h1 class="officialheading">Week 9 blog updates</h1>
+    <p>Ok lah to be honest. In this week, theres not really much to explain so bascially what I have learnt in this week is how to use 
+        bootstrap. To summarize it, it is something like something that you can import it or download it from the internet and what it does is 
+        that it makes designing for websites <b>SO MUCH MORE EASIER</b>. So lets say you want to create a
+        card for example, you can just go to the bootstrap website and click on card section and it will have a format there ready to be manipulated into a way that you would want.
+        Funny thing to note, the formats revolves around classes so like when you want to create a card right, you copy the format and upon further looking you can see that the div classes
+        are usually related to the current topic like in this case the div class is just 'card' so what I would want to say is that it is pretty easy to manipulate around with bootstrap. Just know the specific class names that you need
+        and the correct format and you are good to go. </p>
+    <p>So now moving onto the second part of the notes in week 9, theres charts. To be honest, its not really much
+        it just talks about what certain charts are and what they are used for. Some of which I have already learnt in geography in like secondary 3-4 or datascience in sem 1 
+        so imma just note down the new things I have learnt. So starting off, radar chart. Radar chart is a way of showing multiple data points and variations between them. To put it simply,
+        its like character stats like think of the jojo stats kind of thing its a chart that allows you to see how like a character or a thing or an event would differ in each of these so called 'stats'.
+        And yah thats about it. I hope to learn something more interesting next week. Like animation or something.
+    </p>
     
-    </main>
+</main>
     <aside>
         <h3>Citations</h3>
         <a href ='https://unsplash.com/photos/gKXKBY-C-Dk'>https://unsplash.com/photos/gKXKBY-C-Dk</a>
